@@ -12,3 +12,7 @@ I built the backend using Python's web app framework and some HTML and CSS to st
 To run this application locally, follow these steps:
 - run " git clone https://github.com/bamiboy237/unit_converter.git" on your terminal
 - create a virtual environment and install flask, flask-wtf, wtfforms and then run "flask run"
+
+
+## I was inspired by:
+https://roadmap.sh/projects/unit-converter
