@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }} - Unit Converter</title>
+    {% else %}
+    <title>Unit Converter</title>
+    {% endif %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; 
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        @media (min-width: 600px) {
+            .button-container {
+                flex-direction: row; /* Horizontal layout on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Unit Converter</h1>
+    <div class="button-container">
+        <a href="/length" class="button" aria-label="Length Converter">Length Converter</a>
+        <a href="/weight" class="button" aria-label="Weight Converter">Weight Converter</a>
+        <a href="/temperature" class="button" aria-label="Temperature Converter">Temperature Converter</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Weight Converter</h1>
+    
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        
+        <div>
+            <label for="value">{{ form.value.label }}</label>
+            {{ form.value(size=10, class="input-field") }}  
+        </div>
+        
+        <div>
+            <label for="from_unit">{{ form.from_unit.label }}</label>
+            {{ form.from_unit(class="select-field") }}
+        </div>
+        
+        <div>
+            <label for="to_unit">{{ form.to_unit.label }}</label>
+            {{ form.to_unit(class="select-field") }}
+        </div>
+    <br>     
+        <div>
+            {{ form.Submit(class="btn") }}
+        </div>
+    </form>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<style>
+    .input-field {
+        padding: 10px;
+        margin-top: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .select-field {
+        padding: 10px;
+        margin-top: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .btn {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .success {
+        color: green;
+    }
+    .error {
+        color: red;
+    }
+</style>
+{% endblock %}
